@@ -1,0 +1,11 @@
+
+change process h > e- ve~ mu+ vm SMHLOOP=0 NPprop=0 NP==1 NPcHbox^2==1 NPcHl3^2==1
+launch --rwgt_name="cHbox_cHl3"
+set cHbox 1
+set cHW 0
+set cHl3 1
+set cHq3 0
+set cll1 0
+done
+
+
