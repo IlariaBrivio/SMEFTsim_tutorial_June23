@@ -60,6 +60,7 @@ if __name__ == '__main__':
 
     ## define relevant histograms
     h_mll = {}
+    h_mmv = {}
     h_pTl1 = {}
     h_pTmu = {}
 
@@ -67,10 +68,12 @@ if __name__ == '__main__':
         label = k
 
         h_mll[k]   = ROOT.TH1F('mll_'+label  , 'mll_'+label , 25, 0, 125)
+        h_mmv[k]   = ROOT.TH1F('mmv_'+label  , 'mmv_'+label , 25, 0, 125)
         h_pTl1[k]  = ROOT.TH1F('pTl1_'+label , 'pTl1_'+label ,16, 0, 64)
         h_pTmu[k]  = ROOT.TH1F('pTmu_'+label , 'pTmu_'+label ,16, 0, 64)
 
         h_mll[k].Sumw2()
+        h_mmv[k].Sumw2()
         h_pTl1[k].Sumw2()
         h_pTmu[k].Sumw2()
   
@@ -118,6 +121,7 @@ if __name__ == '__main__':
 	        # define the four momentum of the dilepton pair. 
 
 		ll_p4 = ROOT.TLorentzVector(0, 0, 0, 0)
+		mv_p4 = ROOT.TLorentzVector(0, 0, 0, 0)
                 e_p4 = ROOT.TLorentzVector(0, 0, 0, 0)
                 m_p4 = ROOT.TLorentzVector(0, 0, 0, 0)
 
@@ -135,12 +139,17 @@ if __name__ == '__main__':
 
                         if abs(lhep_pdgID(p)) == 13: 
                            ll_p4 += i_p4
+                           mv_p4 += i_p4
                            m_p4 = i_p4
 
+			# muon neutrino
+                        if abs(lhep_pdgID(p)) == 14: 
+                           mv_p4 += i_p4
 
                 # for each event: store the observables in the histograms
                 for k in wgt_id:
                         h_mll[k].Fill(ll_p4.M(), weight[k]) 
+                        h_mmv[k].Fill(mv_p4.M(), weight[k]) 
                         h_pTl1[k].Fill(max(e_p4.Pt(), m_p4.Pt()), weight[k]) 
                         h_pTmu[k].Fill(m_p4.Pt(), weight[k]) 
                     
@@ -158,6 +167,7 @@ if __name__ == '__main__':
     print event_num
     for k in wgt_id:
         h_mll[k].Scale(1./event_num)
+        h_mmv[k].Scale(1./event_num)
         h_pTl1[k].Scale(1./event_num)
         h_pTmu[k].Scale(1./event_num)
         
@@ -168,6 +178,7 @@ if __name__ == '__main__':
 
 
         h_mll[k].Write()
+        h_mmv[k].Write()
         h_pTl1[k].Write()
         h_pTmu[k].Write()
 

@@ -30,12 +30,12 @@ if __name__ == '__main__':
 #          ,'cHbox_cHW'
 #          ,'cHbox_cHl3'
 #          ,'cHbox_cll1'
-          ,'cHW_cHl3'
+#          ,'cHW_cHl3'
 #          ,'cHW_cll1'
 #          ,'cHl3_cll1'
           ,'cHl3_propW'
-          ,'cHq3_propW'
-          ,'cll1_propW'
+#          ,'cHq3_propW'
+#          ,'cll1_propW'
     ]
 
 
@@ -47,8 +47,15 @@ if __name__ == '__main__':
       'mll': ['m_{ll} [GeV]',                # x label
               "d#sigma/dm_{ll} [pb/5 GeV]",  # y label
               1e-9, 3e-6, 'log',             # ymin, ymax, log/lin scale
-              #.68, 1.25,                       # ymin, ymax lower panel
-              .95, 1.05,                       # ymin, ymax lower panel
+              .68, 1.25,                       # ymin, ymax lower panel
+              #.95, 1.05,                       # ymin, ymax lower panel
+              []],                           # weights labels NOT to plot
+
+      'mmv': ['m_{#mu#nu_{#mu}} [GeV]',                # x label
+              "d#sigma/dm_{#mu#nu_{#mu}} [pb/5 GeV]",  # y label
+              1e-9, 5e-6, 'log',             # ymin, ymax, log/lin scale
+              .68, 1.25,                       # ymin, ymax lower panel
+              #.95, 1.05,                       # ymin, ymax lower panel
               []],                           # weights labels NOT to plot
 
       'pTl1': ['p_{T}^{l1} [GeV]',
@@ -73,20 +80,20 @@ if __name__ == '__main__':
     'cHbox'      :862,
     'cHW'        :800,
     'cHl3'       :633,
-    'cll1'       :807,
+    'cll1'       :429,
     'cHbox_sq'   :862,
     'cHW_sq'     :800,
     'cHl3_sq'    :633,
-    'cll1_sq'    :807,
-    'cHbox_cHW'  :418,
-    'cHbox_cHl3' :437,
+    'cll1_sq'    :429,
+    'cHbox_cHW'  :807,
+    'cHbox_cHl3' :418,
     'cHbox_cll1' :456,
     'cHW_cHl3'   :429,
     'cHW_cll1'   :437,
     'cHl3_cll1'  :418,
     'cHl3_propW' :633,
     'cHq3_propW' :879,
-    'cll1_propW' :807
+    'cll1_propW' :429
     }
 
     style = {
