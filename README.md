@@ -2,14 +2,9 @@
 Basic SMEFTsim tutorial for a PhD course.
 
 ## Prerequisites
-you can either have installed locally:
+you will need:
 * Madgraph >=2.6.x
 * pyROOT for python2
-
-or use this docker image:
-```
-docker run --cap-add SYS_ADMIN --device /dev/fuse -it gitlab-registry.cern.ch/agilbert/eft-exercise-docker:snapshot /bin/bash
-```
 
 ## Tutorial instructions
 
