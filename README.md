@@ -6,8 +6,10 @@ you can either have installed locally:
 * Madgraph >=2.6.x
 * pyROOT for python2
 
-or use docker
-[instructions to come]
+or use this docker image:
+```
+docker run --cap-add SYS_ADMIN --device /dev/fuse -it gitlab-registry.cern.ch/agilbert/eft-exercise-docker:snapshot /bin/bash
+```
 
 ## Tutorial instructions
 
@@ -20,7 +22,9 @@ cd Material
 
 ### Running MG and looking at diagrams
 launch MadGraph 
-[command TBC]
+```
+./MGDIR/bin/mg5_aMC
+```
 
 inside the MadGraph terminal, run
 ```
