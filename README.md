@@ -29,7 +29,7 @@ import model ./SMEFTsim_U35_MwScheme_UFO-massless_Hvlvl
 
 SM process:
 ```
-generate h > e- ve~ mu+ vm SMHLOOP=0 NP=0 NPprop=
+generate h > e- ve~ mu+ vm SMHLOOP=0 NP=0 NPprop=0
 display diagrams
 output Hvlvl_SM
 ```
@@ -62,7 +62,7 @@ SM-SMEFT interference, propagator corrections:
 ```
 generate h > e- ve~ mu+ vm SMHLOOP=0 NP=0 NPprop=2 NPprop^2==2
 display diagrams
-output Hvlvl_prop
+output Hvlvl_SMEFT_prop
 ```
 
 
