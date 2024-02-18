@@ -109,7 +109,7 @@ modify param_card setting  `cHl3=1`
 
 
 ### Simulation via reweighting of the SM sample
-reweight cards and a script to run them are provided in the material folder. if needed, change hte name of the SM directory or run in the `launch_reweughting.sh` script and then launch it
+reweight cards and a script to run them are provided in the material folder. if needed, change hte name of the SM directory or run in the `launch_reweighting.sh` script and then launch it
 ```
 ./launch_reweighting.sh
 ```
