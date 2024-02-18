@@ -2,12 +2,9 @@
 Basic SMEFTsim tutorial for a PhD course.
 
 ## Prerequisites
-you can either have installed locally:
+you will need:
 * Madgraph >=2.6.x
 * pyROOT for python2
-
-or use docker
-[instructions to come]
 
 ## Tutorial instructions
 
@@ -20,7 +17,9 @@ cd Material
 
 ### Running MG and looking at diagrams
 launch MadGraph 
-[command TBC]
+```
+./MGDIR/bin/mg5_aMC
+```
 
 inside the MadGraph terminal, run
 ```
